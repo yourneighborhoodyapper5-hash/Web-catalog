@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // The browser only needs read access to non-secret Ollama connection settings.
+    // Keep write access limited to trusted administrators in your Firebase project.
+    match /settings/ollama {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

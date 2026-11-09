@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f5f1" />
+    <meta name="description" content="KairoPeer brings useful web results and thoughtful AI answers together." />
+    <title>KairoPeer — Find your way</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="KairoPeer home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Kairo<span class="brand-light">Peer</span></span></a>
+      <nav class="top-actions" aria-label="Main navigation"><a href="#about">About</a><button class="icon-button" id="settings-button" aria-label="Search settings" title="Search settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/><path d="m19.4 15 .1.1a1.8 1.8 0 1 1-2.5 2.5l-.1-.1a1.8 1.8 0 0 0-3 .9v.3a1.8 1.8 0 1 1-3.6 0v-.2a1.8 1.8 0 0 0-3.1-1l-.1.1a1.8 1.8 0 1 1-2.5-2.5l.1-.1a1.8 1.8 0 0 0-1-3.1h-.2a1.8 1.8 0 1 1 0-3.6h.2a1.8 1.8 0 0 0 1-3.1l-.1-.1a1.8 1.8 0 1 1 2.5-2.5l.1.1a1.8 1.8 0 0 0 3.1-1v-.2a1.8 1.8 0 1 1 3.6 0v.2a1.8 1.8 0 0 0 3.1 1l.1-.1a1.8 1.8 0 1 1 2.5 2.5l-.1.1a1.8 1.8 0 0 0 1 3.1h.2a1.8 1.8 0 1 1 0 3.6h-.2a1.8 1.8 0 0 0-1.2 1.1Z"/></svg></button></nav>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> A clearer way to explore</div>
+        <h1>Curiosity, <span>meet clarity.</span></h1>
+        <p class="hero-copy">Search the web your way. Get a thoughtful answer, or go straight to the sources.</p>
+        <form class="search-form" id="search-form" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+          <input id="search-input" type="search" placeholder="What would you like to find?" autocomplete="off" aria-label="Search the web" />
+          <kbd>↵</kbd>
+          <button class="search-submit" type="submit" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <div class="search-options"><span>Search with</span><button class="provider active" data-provider="wikipedia">KairoPeer</button><span class="option-divider">·</span><a class="provider-link" id="google-link" target="_blank" rel="noopener noreferrer">Google</a><span class="option-divider">·</span><a class="provider-link" id="bing-link" target="_blank" rel="noopener noreferrer">Bing</a><span class="option-divider">·</span><a class="provider-link" id="ddg-link" target="_blank" rel="noopener noreferrer">DuckDuckGo</a></div>
+        <div class="quick-searches"><span>Try</span><button data-query="How do coral reefs form?">how coral reefs form</button><button data-query="The history of the printing press">the printing press</button><button data-query="Why do leaves change color?">why leaves change color</button></div>
+      </section>
+      <section class="results hidden" id="results-section" aria-live="polite">
+        <div class="results-heading"><div><div class="section-kicker" id="result-count">YOUR SEARCH</div><h2 id="results-title">Results</h2></div><button class="new-search" id="new-search">New search <span>↗</span></button></div>
+        <div class="results-layout">
+          <div class="web-results" id="web-results"></div>
+          <aside class="answer-card" id="answer-card"><div class="answer-top"><span class="sparkle">✳</span><div><strong>KairoPeer answer</strong><small>Based on the sources below</small></div><span class="answer-badge">AI</span></div><div class="answer-content" id="answer-content"><div class="answer-placeholder"><span class="loader"></span><span>Looking through useful sources…</span></div></div><div class="answer-footnote" id="answer-footnote">AI answers can make mistakes. Check the original sources.</div></aside>
+        </div>
+        <div class="no-results hidden" id="no-results">No matching pages came back. Try another phrase or choose a search engine above.</div>
+      </section>
+      <section class="about" id="about"><div class="about-icon">✳</div><div><h3>Search should feel open.</h3><p>KairoPeer puts the sources first. Read a quick summary, then follow the links and decide for yourself.</p></div><a href="#home" aria-label="Back to top">↑</a></section>
+    </main>
+    <footer><a class="brand footer-brand" href="./"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Kairo<span class="brand-light">Peer</span></span></a><span>Made for the next good question.</span><span class="footer-note">Search wide. Think for yourself.</span></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
