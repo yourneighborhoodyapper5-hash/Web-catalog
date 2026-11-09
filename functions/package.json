@@ -1,0 +1,10 @@
+{
+  "name": "kairopeer-functions",
+  "description": "Secure Ollama Cloud proxy for KairoPeer",
+  "private": true,
+  "engines": { "node": "20" },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-functions": "^6.3.2"
+  }
+}
